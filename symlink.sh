@@ -12,6 +12,7 @@ chsh -s $(which zsh)
 echo '...git'
 mkdir $HOME/.gitconfig.d
 ln -s $HOME/.dotfiles/git/.gitconfig $HOME/.gitconfig
+ln -s $HOME/.dotfiles/git/.gitmessage $HOME/.gitconfig.d/.gitmessage
 ln -s $HOME/.dotfiles/git/alias.txt $HOME/.gitconfig.d/alias.txt
 ln -s $HOME/.dotfiles/git/color.txt $HOME/.gitconfig.d/color.txt
 
