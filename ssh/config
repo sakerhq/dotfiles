@@ -1,0 +1,11 @@
+Host [bastion]
+   HostName [ip]
+   User [user]
+   IdentityFile ~/.ssh/[key-name].pem
+   ProxyCommand none
+
+Host [server]
+   HostName [ip]
+   User [user]
+   IdentityFile ~/.ssh/[key-name].pem
+   ProxyCommand ssh [bastion] -W %h:%p

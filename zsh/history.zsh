@@ -1,4 +1,4 @@
-# Nicer history
+# history
 HISTSIZE=1048576
 HISTFILE="$HOME/.zsh_history"
 SAVEHIST=$HISTSIZE

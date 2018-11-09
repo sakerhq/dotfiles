@@ -1,0 +1,141 @@
+#!/bin/bash
+
+# Usage
+# ./project-folders -t=[contracts|products] -n=[NAME]
+
+# Assumes you have a development folder for non-code related material
+
+# development folder system
+# contract/
+#   ├╴working/
+#   └╴live/
+# products/
+#   ├╴working/
+#   └╴live/
+
+for i in "$@"; do
+case $i in
+    -t=*|--type=*)
+    TYPE="${i#*=}"
+    ;;
+    -n=*|--name=*)
+    NAME="${i#*=}"
+    ;;
+    *)
+    echo "${i}"
+    ;;
+esac
+done
+
+START="$HOME/development/$TYPE/working/$NAME"
+echo $START
+
+# contract_name/
+#   ├╴research/
+#   ├╴misc/
+#   ├╴designs/
+#   │ ├╴comps/
+#   │ └╴assets/
+#   │
+#   ├╴project_management/
+#   ├╴support/
+#   │ ├╴documentation/
+#   │ └╴user_guide/
+#   │
+#   ├╴documents/
+#   │ ├╴contract/
+#   │ ├╴proposal/
+#   │ │ ├╴drafts/
+#   │ │ └╴final/
+#   │ │
+#   │ ├╴legal/
+#   │ └╴invoice/
+#   │
+#   └╴showcase/
+
+mkdir "$START"
+if [ "$TYPE" == "contracts" ]; then
+  mkdir "$START/designs"
+  mkdir "$START/designs/.archive"
+  mkdir "$START/designs/assets"
+  mkdir "$START/designs/comps"
+  mkdir "$START/documents"
+  mkdir "$START/documents/.archive"
+  mkdir "$START/documents/proposal"
+  mkdir "$START/documents/proposal/drafts"
+  mkdir "$START/documents/proposal/final"
+  mkdir "$START/documents/legal"
+  mkdir "$START/documents/contract"
+  mkdir "$START/documents/invoice"
+  mkdir "$START/project_management"
+  mkdir "$START/project_management/.archive"
+  mkdir "$START/misc"
+  mkdir "$START/misc/.archive"
+  mkdir "$START/support"
+  mkdir "$START/support/.archive"
+  mkdir "$START/support/documentation"
+  mkdir "$START/support/user_guide"
+  mkdir "$START/research"
+  mkdir "$START/research/.archive"
+  mkdir "$START/showcase"
+  mkdir "$START/showcase/.archive"
+fi
+
+# product folder template
+# product_name/
+#   ├╴research/
+#   ├╴misc/
+#   ├╴designs/
+#   │ ├╴comps/
+#   │ └╴assets/
+#   │
+#   ├╴resources/
+#   ├╴project_management/
+#   │ └╴documentation/
+#   │
+#   ├╴support/
+#   │ ├╴documentation/
+#   │ └╴user_guide/
+#   │
+#   ├╴marketing/
+#   │ └╴media/
+#   │
+#   ├╴documents/
+#   │ ├╴proposal/
+#   │ │ ├╴drafts/
+#   │ │ └╴final/
+#   │ │
+#   │ └╴Legal/
+#   │
+#   └╴showcase/
+
+if [ "$TYPE" == "products" ]; then
+  mkdir "$START/designs"
+  mkdir "$START/designs/.archive"
+  mkdir "$START/designs/assets"
+  mkdir "$START/designs/comps"
+  mkdir "$START/documents"
+  mkdir "$START/documents/.archive"
+  mkdir "$START/documents/proposal"
+  mkdir "$START/documents/proposal/drafts"
+  mkdir "$START/documents/proposal/final"
+  mkdir "$START/documents/Legal"
+  mkdir "$START/resources"
+  mkdir "$START/resources/.archive"
+  mkdir "$START/project_management"
+  mkdir "$START/project_management/.archive"
+  mkdir "$START/project_management/documentation"
+  mkdir "$START/marketing"
+  mkdir "$START/marketing/.archive"
+  mkdir "$START/marketing/media"
+  mkdir "$START/misc"
+  mkdir "$START/misc/.archive"
+  mkdir "$START/research"
+  mkdir "$START/research/.archive"
+  mkdir "$START/support"
+  mkdir "$START/support/.archive"
+  mkdir "$START/support/documentation"
+  mkdir "$START/support/user_guide"
+  mkdir "$START/showcase"
+  mkdir "$START/showcase/.archive"
+fi

@@ -3,6 +3,7 @@
 # alias ohmyzsh="nano ~/.oh-my-zsh"
 alias n="nano"
 alias ls='ls -lAFh'
+alias tree="find . -print | sed -e 's;[^/]*/;|____;g;s;____|; |;g'"
 
 # Navigation
 alias ..="cd .."
