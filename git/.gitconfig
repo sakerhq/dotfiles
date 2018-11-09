@@ -1,0 +1,18 @@
+[include]
+    path = ~/.gitconfig.d/alias.txt
+    path = ~/.gitconfig.d/color.txt
+[user]
+    name = Steven Comyn
+    email = steven.comyn@saker.io
+[core]
+    editor = vim
+    whitespace = fix,-indent-with-non-tab,trailing-space,cr-at-eol
+    excludesfile = ~/.gitignore_global
+[credential]
+    helper = osxkeychain
+[push]
+    default = matching
+[diff]
+    tool = vimdiff
+[difftool]
+    prompt = false
